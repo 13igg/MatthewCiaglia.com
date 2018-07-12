@@ -14,4 +14,4 @@
 ## Projects to be sourced and promoted:
 * Lotto Pool Manager - React
 * Torrent Payment - React Next.js (exported to static html for demo) Solidity
-* Musicality track rater - Ruby on Rails
+* Musicality track rater - Ruby on Rails http://radiant-river-4505.herokuapp.com
