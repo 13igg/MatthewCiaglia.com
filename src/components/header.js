@@ -1,48 +1,56 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {withRouter, NavLink } from 'react-router-dom';
+import {Menu, Container} from 'semantic-ui-react';
 
-export default () =>
-{
-    const routes = [
-        {
-          path: '/',
-          label: 'Matthew Ciaglia',
-          index: true,
-        },
-        {
-          path: '/about',
-          label: 'About',
-        },
-        {
-          path: '/resume',
-          label: 'Resume',
-        },
-        {
-          path: '/projects',
-          label: 'Projects',
-        },
-        {
-          path: '/contact',
-          label: 'Contact',
-        },
-      ];
+class Header extends Component{ 
+        state = {}
+        
+        routes = [
+            {
+                key: 1,
+                path: '/',
+                label: 'Matthew Ciaglia',
+                index: true,
+            },
+            {
+                key: 3,
+                path: '/resume',
+                label: 'Resume',
+            },
+            {
+                key: 4,
+                path: '/projects',
+                label: 'Projects',
+            },
+            {
+                key: 2,
+                path: '/blockchain',
+                label: 'Blockchain',
+            },
+            {
+                key: 5,
+                path: '/contact',
+                label: 'Contact',
+            },
+        ];
 
-    return(
-        <header id="header">
-            <h1 className="index-link">
-            {routes.filter(l => l.index).map(l => (
-                <Link key={l.label} to={l.path}>{l.label}</Link>
-            ))}
-            </h1>
-            <nav className="links">
-            <ul>
-                {routes.filter(l => !l.index).map(l => (
-                <li key={l.label}>
-                    <Link to={l.path}>{l.label}</Link>
-                </li>
-                ))}
-            </ul>
-            </nav>
-      </header>
-    );
-};
+    render(){
+        return(
+            <Container>
+                <Menu fixed='top' inverted>
+                    {this.routes.map(l => (                                
+                        <Menu.Item 
+                            key = {l.key}
+                            header = {l.index} 
+                            as={NavLink} 
+                            to={l.path}                            
+                            name={l.label}
+                        />                             
+                    ))}
+                </Menu>
+            </Container>
+        );
+        }
+}
+
+export default withRouter(Header)

@@ -5,19 +5,22 @@ import registerServiceWorker from './registerServiceWorker';
 import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import App from './App';
-import About from './pages/about';
+import Index from './pages/Index';
+import Blockchain from './pages/Blockchain';
+import Contact from './pages/Contact';
+import Resume from './pages/Resume';
+import Projects from './pages/Projects';
 
 ReactDOM.render(
     <Router>
       <Switch>
-        <Route path="/" exact component={App} />
-        <Route path="/about" component={About} />
-        {/*<Route path="/projects" component={Projects} />
+        <Route path="/" exact component={Index} />
+        <Route path="/blockchain" component={Blockchain} />        
         <Route path="/contact" component={Contact} />  
+        <Route path="/projects" component={Projects} />
         <Route path="/resume" component={Resume} />
   
-        <Route component={NotFound} status={404} /> */}
+        {/*<Route component={NotFound} status={404} /> */}
       </Switch>
     </Router>,
     document.getElementById('root'),
