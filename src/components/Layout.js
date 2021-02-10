@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header';
+import Header from './header';
 import { Segment, Grid} from 'semantic-ui-react';
 import LeftPane from './LeftPane';
 
